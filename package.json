@@ -1,0 +1,38 @@
+{
+  "name": "promptdeck",
+  "version": "2.0.0",
+  "description": "AI prompt clipboard manager with skills, themes, and media widgets — by WayLucid",
+  "main": "main.js",
+  "author": "WayLucid",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . PromptDeck --platform=win32 --arch=x64 --out=dist --overwrite --asar",
+    "installer": "electron-builder --win nsis --x64"
+  },
+  "build": {
+    "appId": "com.promptdeck.app",
+    "productName": "PromptDeck",
+    "directories": {
+      "output": "installer"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "installerSidebar": null
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "package.json"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^26.8.1",
+    "electron-packager": "^17.1.2"
+  }
+}
