@@ -6,6 +6,8 @@ PromptDeck is a desktop utility for anyone who works with AI tools. Save your fa
 
 Built by [WayLucid](https://www.waylucid.com).
 
+![PromptDeck Layout](screenshots/promptdeck-layout.png)
+
 ---
 
 ## Features
@@ -15,6 +17,8 @@ Built by [WayLucid](https://www.waylucid.com).
 **Skills Board** — A second board for code snippets, shell commands, checklists, and reference cards. Tag by language, type as snippet/checklist/reference.
 
 **Themes** — Five built-in color themes (Dark Gold, Cobalt, Emerald, Rose, Light) plus a custom accent color picker. Your workspace, your look.
+
+![PromptDeck Themes](screenshots/promptdeck-themes.png)
 
 **Media Widgets** — Embedded YouTube and Spotify players in collapsible panels. Background music or tutorial videos while you work.
 
