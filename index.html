@@ -526,7 +526,7 @@ body::before{
   <span class="footer-sep">|</span>
   <a href="https://dock.waylucid.com" target="_blank" rel="noopener">Dock</a>
   <a href="https://app.waylucid.com" target="_blank" rel="noopener">App</a>
-  <a href="https://github.com/WL-MadHacker/PromptDeck" target="_blank" rel="noopener">GitHub</a>
+  <a href="https://github.com/WL-MadHacker/promptdeck-public" target="_blank" rel="noopener">GitHub</a>
 </footer>
 
 <!-- ADD/EDIT MODAL -->
@@ -656,14 +656,17 @@ let settings = { theme: 'dark-gold', accentOverride: null, density: 'comfortable
 let widgetState = { youtube: false, spotify: false };
 
 const DEFAULT_PROMPTS = [
-  { id: crypto.randomUUID(), title: "Clarify Requirements", text: "Please tell me your exact understanding of my requests, why you think I am asking them and what your specific plan for implementation is. I will then either approve the execution of the proposal or I will provide additional feedback and/or context.", category: "Planning", order: 0 }
+  { id: crypto.randomUUID(), title: "Clarify Requirements", text: "Please tell me your exact understanding of my requests, why you think I am asking them and what your specific plan for implementation is. I will then either approve the execution of the proposal or I will provide additional feedback and/or context.", category: "Planning", order: 0 },
+  { id: crypto.randomUUID(), title: "Peer Review", text: "Review your last response. Identify any errors, logical gaps, or unsupported assumptions. Then provide a corrected and improved version. Be specific about what changed and why.", category: "Review", order: 1 },
+  { id: crypto.randomUUID(), title: "Step-by-Step Plan", text: "Break this task into numbered steps. For each step, state what you will do, what files or resources are involved, and what could go wrong. Do not begin execution until I approve the plan.", category: "Planning", order: 2 },
+  { id: crypto.randomUUID(), title: "Take Initiative Mode", text: "Infer the full intent behind every request, not just the literal ask. Deliver the output first, explanation after. Apply any known context or preferences before asking clarifying questions. Scan every task for adjacent opportunities or blockers worth surfacing. End each response with one concrete next step, prioritized by impact. Execute freely within scope — only pause for irreversible actions or genuine ambiguity. Label uncertainty honestly. Never project false confidence.", category: "General", order: 3 }
 ];
 
 const DEFAULT_SKILLS = [
-  { id: crypto.randomUUID(), title: "Git: Undo Last Commit", text: "git reset --soft HEAD~1", category: "Git", language: "bash", type: "snippet", order: 0 },
-  { id: crypto.randomUUID(), title: "Git: Interactive Rebase", text: "git rebase -i HEAD~3", category: "Git", language: "bash", type: "snippet", order: 1 },
-  { id: crypto.randomUUID(), title: "Deploy Checklist", text: "1. Run test suite\n2. Check for console errors\n3. Review PR diff\n4. Merge to main\n5. Verify production deployment\n6. Smoke test critical paths", category: "Workflow", type: "checklist", order: 2 },
-  { id: crypto.randomUUID(), title: "VS Code Shortcuts", text: "Ctrl+Shift+P  Command Palette\nCtrl+P        Quick Open\nCtrl+Shift+`  New Terminal\nCtrl+B        Toggle Sidebar\nCtrl+/        Toggle Comment\nAlt+Up/Down   Move Line\nCtrl+D        Select Next Match", category: "Reference", type: "reference", order: 3 }
+  { id: crypto.randomUUID(), title: "Claude: System Prompt Template", text: "You are [ROLE]. Your task is to [OBJECTIVE].\n\nConstraints:\n- [Constraint 1]\n- [Constraint 2]\n- [Constraint 3]\n\nOutput format:\n- [Format requirement]\n- [Length/structure requirement]\n\nDo not:\n- [Anti-pattern 1]\n- [Anti-pattern 2]", category: "Claude", language: "prompt", type: "snippet", order: 0 },
+  { id: crypto.randomUUID(), title: "Claude: Skill File Template", text: "---\ndescription: Short description of what this skill does\nglobs: **/*.ts, **/*.js\nalwaysApply: false\n---\n\n# Skill Name\n\n## When to Use\nDescribe the trigger conditions for this skill.\n\n## Instructions\n1. Step one\n2. Step two\n3. Step three\n\n## Output Format\nDescribe expected output structure.\n\n## Examples\nProvide concrete examples of input/output.", category: "Claude", language: "markdown", type: "reference", order: 1 },
+  { id: crypto.randomUUID(), title: "Claude: CLAUDE.md Template", text: "# Project Name\n\n## Build & Run\n- `npm install` — install dependencies\n- `npm run dev` — start dev server\n- `npm test` — run tests\n- `npm run build` — production build\n\n## Architecture\n- /src — application source\n- /tests — test files\n- /docs — documentation\n\n## Code Conventions\n- Use TypeScript strict mode\n- Prefer named exports\n- Write tests for all new features\n- Use conventional commits\n\n## Key Files\n- src/index.ts — entry point\n- src/config.ts — configuration", category: "Claude", language: "markdown", type: "reference", order: 2 },
+  { id: crypto.randomUUID(), title: "Claude: New Session Checklist", text: "1. Read CLAUDE.md for project conventions\n2. Check git status and current branch\n3. Review recent commits for context\n4. Identify the task scope and constraints\n5. Confirm approach before executing\n6. Run tests after changes\n7. Commit with descriptive message", category: "Claude", language: "workflow", type: "checklist", order: 3 }
 ];
 
 // ---- INIT ----
