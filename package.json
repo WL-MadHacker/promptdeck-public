@@ -16,7 +16,8 @@
       "output": "installer"
     },
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "signAndEditExecutable": false
     },
     "nsis": {
       "oneClick": true,
